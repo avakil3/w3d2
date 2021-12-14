@@ -64,10 +64,15 @@ class Game
 	# if Board.won?
 		# game_over
 	def play
-		while !@board.won?
+		debugger
+		#while !@board.won?
+			
 			@board.render
+			puts "enter first guess:"
 			guess_1_pos = self.prompt
 			card_value_1 = @board.reveal_on_board(guess_1_pos)
+			# @board.render
+			puts "enter second guess:"
 			guess_2_pos = self.prompt
 			card_value_2 = @board.reveal_on_board(guess_2_pos)
 			if card_value_1 == card_value_2
@@ -77,10 +82,10 @@ class Game
 				@board[guess_2_pos].hide
 				puts "try again"
 			end
-		end
+		#end
 		puts "Congrats, you WON!"
 	end
 end
 
-# b = Game.new(2)
-# b.play
+b = Game.new(2)
+b.play

@@ -33,6 +33,7 @@ class Board
 	def populate
 		total_pairs = (@size ** 2) / 2 # 8
 		current_pairs = 0
+	
 		while current_pairs < total_pairs
 			face_value = ("A".."Z").to_a.sample
 			card_1 = Card.new(face_value)
@@ -41,14 +42,13 @@ class Board
 			pos_1 = [rand(0...@size), rand(0...@size)]
 			pos_2 = [rand(0...@size), rand(0...@size)]
 			
-			if self[pos_1].is_a?(String)
+			if self[pos_1].is_a?(String) && self[pos_2].is_a?(String)
+				debugger
 				self[pos_1] = card_1
-			end
-
-			if self[pos_2].is_a?(String)
 				self[pos_2] = card_2
 				current_pairs +=1
 			end
+
 			
 		end
 	end
@@ -105,3 +105,5 @@ class Board
 end
 
 
+b= Board.new(2)
+p b
