@@ -13,4 +13,5 @@ class Card
 		return @face_value if @is_visible == true
 	end
 
+	#test comment
 end
