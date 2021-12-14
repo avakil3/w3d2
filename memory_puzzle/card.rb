@@ -11,8 +11,8 @@ class Card
 
 	attr_reader :face_value, :face_up
 
-	def initialize
-		@face_value = ("A".."Z").to_a.sample
+	def initialize(face_value)
+		@face_value = face_value
 		@is_visible = false
 	end
 
@@ -39,6 +39,4 @@ class Card
 			" "
 		end
 	end
-	
-
 end
